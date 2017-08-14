@@ -2,8 +2,10 @@
 #-*- coding: utf-8 -*-
 
 from math import sqrt
+from datetime import datetime
 
 def search(n, arr):
+    start_time = datetime.now()
     size = len(arr)
     jump_block = int(sqrt(size))
     start, end = 0, jump_block
@@ -18,4 +20,5 @@ def search(n, arr):
 
     for x in arr[start:end]:
         if x == n:
+            print "jump search interative mode executed in {}".format(datetime.now() - start_time)
             return n
